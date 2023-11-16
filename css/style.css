@@ -46,6 +46,8 @@ footer{
 
     font-family:'Crimson';
     font-size: 1rem;
+    margin-top: 3rem;
+
 }
 
 /*adaptable responsivo*/
@@ -65,66 +67,37 @@ footer{
 
 /*fondo*/
 
-.primero{
-
-    width: 100%; 
-    height: 700px; 
-    background-image: url("../img/Fotografias/bebe\ feliz.jpg");
-    background-size: cover; 
-    background-repeat: no-repeat;
-    display: flex;
-
- 
-
-
-}
-
-.text{
-  flex: 1;
-  color: white;
-font-size: 1.8rem;
-margin: 0;
-padding: 100px;
-
-}
-
-/* reponsivo */
-@media (max-width: 768px) {
-  .primero {
-      height: 200px; /* Ajusta la altura según tus necesidades */
-  }
-}
-
-
 
 
 /*sobre nosotros */
-.sobre-nosotros {
+.background-section {
   background-image: url("../img/Fotografias/toystoyr1.jpg");
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 100px 0; /* Ajusta según tus necesidades */
+  color: #fff; /* Color del texto sobre la imagen */
+  margin-bottom: 3rem;
 }
 
-.containe {
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-}
-
-.sobre-nosotros-box {
-  background-color: rgba(255, 255, 255, 0.753);
-  padding: 20px;
+.interactive-box {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+  padding: 50px;
   border-radius: 10px;
-  text-align: center;
+  height: 100%;
   transition: transform 0.3s;
-  width: 30%;
-  cursor: pointer;
 }
 
-.sobre-nosotros-box:hover {
+/* Estilos adicionales para mejorar la apariencia en dispositivos más pequeños */
+@media (max-width: 768px) {
+  .interactive-box {
+    margin-bottom: 20px;
+  }
+}
+
+.interactive-box:hover {
   transform: scale(1.05);
 }
+  
 
 #mision {
   background-color: rgba(255, 255, 255, 0.7); /* Cambia el color de fondo para Misión */
@@ -242,14 +215,14 @@ margin-right: 3rem;
   
 
   /* Estilos para el formulario de Reservaciones (usando clases de Bootstrap) */
-.reservations {
+  .reservations {
     background-color: #cccccc;
     padding: 40px 0;
     text-align: center;
   }
   
-  .reservations h2 {
-    font-size: 24px;
+  .reservations p {
+    font-size: 18px;
     margin-bottom: 20px;
   }
   
@@ -258,87 +231,14 @@ margin-right: 3rem;
   }
   
   /* Cambio de color del botón de envío */
-  .btn-primary {
+  .btn-dark {
     background-color: #333;
     border: none;
   }
   
-  .btn-primary:hover {
+  .btn-dark:hover {
     background-color: #555;
   }
-
-
-
- /* Estilos para el contenedor del portafolio */
-.portfolio {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Estilos para la lista de proyectos */
-.portfolio-list {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Estilos para los elementos del portafolio (proyectos) */
-.portfolio-item {
-  overflow: hidden;
-    border: 2px solid #ccc;
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 100%; /* Ancho del 100% para ocupar todo el ancho del contenedor */
-    max-width: 500px; /* Limita el ancho máximo para pantallas grandes */
-    margin: 0 20px; /* Agrega margen horizontal entre los elementos */
-}
-
-.portfolio-item img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Efecto de realce al pasar el cursor */
-.portfolio-item:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Elimina el margen derecho del último elemento en la lista de proyectos */
-.portfolio-item:last-child {
-  margin-right: 0;
-}
-
-.portfolio-title {
-  font-size: 36px;
-  font-weight: bold;
-  font-family: 'Crimson';
-  color: #000000;
-  text-align: center;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-/* Estilo inicial para ocultar el lightbox */
-.portfolio-image-expanded {
-  display: none;
-}
-
-.porta {
-  background-color: #ececec;
-  margin-bottom: 5rem;
-  padding-bottom: 3rem;
-  padding-top: 2rem;
-}
-
-/* Media query para dispositivos móviles (por ejemplo, celulares) */
-@media (max-width: 768px) {
-  .portfolio-list {
-      flex-direction: column; /* Cambia la dirección de la lista para mostrar los elementos uno debajo del otro */
-  }
-}
 
 
   
@@ -346,9 +246,10 @@ margin-right: 3rem;
 
 .scope {
   position: relative;
-  margin-left: 600px;
+  margin-left: 900px;
   width: 200px;
   height: 200px;
+  margin: 0 auto;
   transform-style: preserve-3d;
   animation: slid 30s linear infinite;
 }
@@ -364,7 +265,7 @@ margin-right: 3rem;
   transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
 }
 .scope span img {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -384,3 +285,217 @@ margin-right: 3rem;
     transform: perspective(1000px) rotateY(360deg);
   }
 }
+
+
+
+
+/**/
+
+
+
+
+
+
+/* Servicios */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  margin-left: 10rem;
+  margin-bottom: 5rem;
+
+ 
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.grid-item:hover img {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: 1fr;
+      gap: 10px;
+  }
+}
+
+.image-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  margin: 0;
+  z-index: 1;
+  
+}
+
+/*servicios*/
+
+
+.container h1{
+  margin-bottom: 3rem;
+}
+/* Estilos de la sección de servicios con Bootstrap */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+/* Efecto de realce al pasar el puntero */
+.service-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Estilos de la sección de testimonios */
+.reviews {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.testimonials {
+  margin: 0 -10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.testimonial {
+  background: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  transition: background-color 0.5s, color 0.5s; /* Agrega una transición suave */
+}
+
+.testimonial:hover {
+  background: #313131; /* Cambia el fondo al pasar el cursor */
+  color: #fff; /* Cambia el color del texto al pasar el cursor */
+}
+
+.testimonial img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  width: 200px; /* Tamaño fijo para las imágenes */
+  height: 200px; /* Tamaño fijo para las imágenes */
+}
+
+.testimonial p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.testimonial img,
+.testimonial p {
+  padding: 0 10px;
+}
+/*--video-*/
+
+video {
+  width: 100%;
+  height: 48rem;
+
+}
+
+.video-container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.text-overlay {
+  position: absolute;
+  border-radius: 150%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  width: 80%; /* Ajustar el ancho del fondo semitransparente */
+  max-width: 400px; /* Establecer un ancho máximo para contenido */
+}
+
+.text-overlay h1,
+.text-overlay p {
+  margin: 0;
+}
+
+
+
+/*-----*/
+
+
+
+.btn-wsp{
+  position:fixed;
+  width:60px;
+  height:60px;
+  line-height: 63px;
+  bottom:25px;
+  right:25px;
+  background:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:35px;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+  z-index:100;
+  transition: all 300ms ease;
+}
+.btn-wsp:hover{
+  background: #20ba5a;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+  .btn-wsp{
+      width:63px;
+      height:63px;
+      line-height: 66px;
+}
+}
+
+/*caro*/
